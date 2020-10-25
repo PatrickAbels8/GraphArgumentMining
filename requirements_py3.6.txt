@@ -1,0 +1,14 @@
+# python 3.5, install py dev for centOS: yum install -y python35u-devel.x86_64
+pandas==0.23.1
+keras==2.2.4
+scikit-learn==0.19.2
+tensorflow==1.11.0
+gensim==3.5.0
+regex==2018.01.10
+tqdm
+gitpython==2.1.11
+spaCy # ==2.0.18
+nltk # also needs "punkt"
+bert-serving-server
+bert-serving-client
+matplotlib==3.0.2
