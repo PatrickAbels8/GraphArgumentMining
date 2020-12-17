@@ -20,9 +20,10 @@ python prep.py
 ```
 
 # Training and testing
-Run the following in the `project` folder to generate the data:
+Run the following in the `project` folder to generate the data for each topic you want:
 ```
 python run.py \
+--data
 --topic "school_uniforms"\
 --num_cases 200 \
 --depth 10 \
