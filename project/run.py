@@ -104,7 +104,7 @@ def run_and_save(topic, hashstr, sentence, label, max_depth, include_lda, includ
     ff.write(f_print_json)
     ff.write('\n')
 
-def create_classifier_data(topi, output_path, classifier_path):
+def create_classifier_data(topic, output_path, classifier_path):
   with open(output_path, 'r') as f:
     samples = f.read()
 
@@ -189,35 +189,15 @@ def main():
 
   # process arguments
   parser = argparse.ArgumentParser()
-  parser.add_argument('--data_dir', defalt=None, type=str, required=True, help='No data_dir found.')
-  parser.add_argument('--topic', defalt=None, type=str, required=True, help='No topic found.')
-  parser.add_argument('--num_cases', defalt=None, type=str, required=True, help='No num_cases found.')
-  parser.add_argument('--depth', defalt=None, type=str, required=True, help='No depth found.')
-  parser.add_argument('--include_lda', defalt=None, type=str, required=True, help='No include_lda found.')
-  parser.add_argument('--include_wordvec', defalt=None, type=str, required=True, help='No include_wordvec found.')
-  parser.add_argument('--par_query', defalt=None, type=str, required=True, help='No par_query found.')
-  parser.add_argument('--include_openie', defalt=None, type=str, required=True, help='No include_openie found.')
+  parser.add_argument('--data_dir', default='data', type=str, required=False, help='No data_dir found.')
+  parser.add_argument('--topic', default=None, type=str, required=True, help='No topic found.')
+  parser.add_argument('--num_cases', default=None, type=int, required=True, help='No num_cases found.')
+  parser.add_argument('--depth', default=None, type=int, required=True, help='No depth found.')
+  parser.add_argument('--include_lda', default=None, type=bool, required=True, help='No include_lda found.')
+  parser.add_argument('--include_wordvec', default=None, type=bool, required=True, help='No include_wordvec found.')
+  parser.add_argument('--par_query', default=None, type=bool, required=True, help='No par_query found.')
+  parser.add_argument('--include_openie', default=None, type=bool, required=True, help='No include_openie found.')
   args = parser.parse_args()
-
-  # load data
-  os.rename('data//abortion.tsv', 'testing//abortion.tsv')
-  os.rename('data//cloning.tsv', 'testing//cloning.tsv')
-  os.rename('data//death_penalty.tsv', 'testing//death_penalty.tsv')
-  os.rename('data//gun_control.tsv', 'testing//gun_control.tsv')
-  os.rename('data//marijuana_legalization.tsv', 'testing//marijuana_legalization.tsv')
-  os.rename('data//minimum_wage.tsv', 'testing//minimum_wage.tsv')
-  os.rename('data//nuclear_energy.tsv', 'testing//nuclear_energy.tsv')
-  os.rename('data//school_uniforms.tsv', 'testing//school_uniforms.tsv')
-  os.rename('data//glove.6B.100d.txt', 'word_embeddings//glove.6B//glove.6B.100d.txt')
-  os.rename('data//glove.6B.200d.txt', 'word_embeddings//glove.6B//glove.6B.200d.txt')
-  os.rename('data//glove.6B.300d.txt', 'word_embeddings//glove.6B//glove.6B.300d.txt')
-  os.rename('data//glove.6B.50d.txt', 'word_embeddings//glove.6B//glove.6B.50d.txt')
-  os.rename('data//property_frequencies.json', 'entity_properties//property_frequencies.json')
-  os.rename('data//properties_with_labels.txt', 'resources//properties_with_labels.txt')
-  os.rename('data//wikidata_30-11-18//property_frequencies.json', 'wikidata//resources//wikidata_30-11-18//property_frequencies.json')
-  os.rename('data//wikidata_30-11-18//property_frequencies_raw.txt', 'wikidata//resources//wikidata_30-11-18//property_frequencies_raw.txt')
-  os.rename('data//wikidata_ukp//properties_with_labels.txt', 'wikidata//resources//wikidata_ukp//properties_with_labels.txt')
-  os.rename('data//wikidata_ukp//property_blacklist.txt', 'wikidata//resources//wikidata_ukp//property_blacklist.txt')
 
   # create paths
   path_to_cases = 'testing//'+args.topic+'.tsv' # can change to any .tsv in /testing
