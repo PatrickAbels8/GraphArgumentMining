@@ -14,7 +14,7 @@ py -[YOUR_VERSION] -m pip install -r requirements_py3.7+.txt
 # Data
 Download from [mail to patrick@abels-family.de] and extract as `data` folder into the `project` folder.
 Download from [mail to patrick@abels-family.de] and extract as `embeddings` folder into the `wikidata-access` folder.
-Run the following in the `project` folder to move insert the data:
+Run the following in the main folder to move insert the data:
 ```
 python prep.py
 ```
