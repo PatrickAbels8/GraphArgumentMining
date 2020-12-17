@@ -1,0 +1,18 @@
+{
+        "dropout": 0.3,
+        "lstm_size": 32,
+        "monitor": "f1_macro",
+        "batch_size": 32,
+        "epochs": 20,
+        "learning_rate": 0.001,
+        "train_embeddings": false,
+        "label_setup": "two_label",
+        "train_setup": "in_domain",
+        "model": "EvLSTM_inner_topic_att",
+        "knowledge_enriched_data": "only_sub_and_inst",
+        "combine_topic_and_entity_paths": true,
+        "knowledge_config": "shallow_paths",
+        "word_embeddings": ["embeddings/en/google_news/GoogleNews-vectors-negative300.bin", "_gnews300", 300],
+        "kg_embeddings": ["embeddings/en/kge_daniil/dec_17_100/", "_wiki_daniil_100", 100],
+        "attention_size": 300
+    }

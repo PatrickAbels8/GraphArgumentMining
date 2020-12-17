@@ -1,0 +1,22 @@
+{
+        "dropout": 0.7,
+        "lstm_size": 64,
+        "monitor": "val_loss",
+        "batch_size": 16,
+        "epochs": 10,
+        "learning_rate": 0.001,
+        "train_embeddings": false,
+        "label_setup": "two_label",
+        "train_setup": "cross_domain",
+        "model": "EvLSTM_inner_att_keras",
+        "knowledge_enriched_data": "wikidata_no_paths",
+        "combine_topic_and_entity_paths": true,
+        "knowledge_config": "shallow_knowledge",
+        "word_embeddings": ["C:/Users/Liane V/Documents/Uni/Bachelorarbeit/embeddings/en/glove/glove.6B.50d.txt", "_glove50", 50],
+        "kg_embeddings": ["C:/Users/Liane V/Documents/Uni/Bachelorarbeit/embeddings/en/kge_daniil/dec_17_50/", "_wiki_daniil_50", 50],
+        "attention_size": 50,
+        "max_concepts": 4,
+        "max_paths": 5,
+        "max_path_len": 11,
+        "knowledge_base": "knowledge_graph"
+}

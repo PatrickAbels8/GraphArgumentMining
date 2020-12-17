@@ -4,11 +4,11 @@ Focusing knowledge-based graph argument mining via topic modeling
 # Requirements
 Python 3.6 for the classifier, run
 ```
-py -3.6 -m pip -r install requirements_3.6.txt
+py -3.6 -m pip install -r requirements_py3.6.txt
 ```
 Python 3.7+ for the evidence extraction, run
 ```
-py -3.7 -m pip -r install requirements_3.7+.txt
+py -[YOUR_VERSION] -m pip install -r requirements_py3.7+.txt
 ```
 
 # Data
